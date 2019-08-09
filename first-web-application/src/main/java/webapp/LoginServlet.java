@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
 		
 		else
 		{
-			request.setAttribute("errorMessage", "Invalid Credentials!");
+			request.setAttribute("errorMessage", "Invalid Credentials !");
 			request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
 		}
 	
