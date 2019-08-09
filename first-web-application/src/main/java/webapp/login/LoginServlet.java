@@ -39,6 +39,8 @@ public class LoginServlet extends HttpServlet {
 		
 		if(isUserValid)
 		{
+			request.getSession().setAttribute("name",name );
+			
 			response.sendRedirect("/todo.do");
 			/*
 			 * request.setAttribute("name",name );

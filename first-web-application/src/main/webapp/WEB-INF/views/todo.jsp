@@ -7,14 +7,20 @@
 <title>Yahoo!!</title>
 </head>
 <body>
-
-<p> Your Todo List are:</p>
+<p> welcome  ${name}  </p>
+<p>Todo List are:</p>
 <ol>
 	<C:forEach items="${todos}" var="todo">
 		<li> ${todo.name}</li>
 	</C:forEach>
-	
 </ol>
+
+<form action="/todo.do" method="post">
+
+<input type="text" name="todo"/>
+<input type="submit" value="Add"/>
+
+</form>
 </body>
 </html>
 

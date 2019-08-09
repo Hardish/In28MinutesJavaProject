@@ -20,4 +20,11 @@ public class TodoService {
 	{
 		return todos;
 	}
+	
+	//method to add todo
+	
+	public void addTodo(Todo todo)
+	{
+		todos.add(todo);
+	}
 }
