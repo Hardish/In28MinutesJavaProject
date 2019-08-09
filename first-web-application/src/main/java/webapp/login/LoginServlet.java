@@ -1,4 +1,4 @@
-package webapp;
+package webapp.login;
 
 import java.io.IOException;
 
@@ -8,13 +8,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import webapp.login.LoginService;
 import webapp.todo.TodoService;
 
 
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
 
-	UserValidationService userValidationService = new UserValidationService();
+	LoginService userValidationService = new LoginService();
 	TodoService todoService = new TodoService();
 	/**
 	 * 
@@ -38,10 +39,14 @@ public class LoginServlet extends HttpServlet {
 		
 		if(isUserValid)
 		{
-		request.setAttribute("name",name );
-		//request.setAttribute("password",password );
-		request.setAttribute("todos", todoService.retriveTodos());
-		request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+			response.sendRedirect("/todo.do");
+			/*
+			 * request.setAttribute("name",name );
+			 * //request.setAttribute("password",password ); request.setAttribute("todos",
+			 * todoService.retriveTodos());
+			 * request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request,
+			 * response);
+			 */
 		}
 		
 		else
